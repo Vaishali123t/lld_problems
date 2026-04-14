@@ -1,14 +1,12 @@
 package main.java.org.lld.tictactoe.model;
 
-public class Player {
+import main.java.org.lld.tictactoe.strategy.MoveStrategy;
+
+public abstract class Player {
 
     String name;
     Piece piece;
-
-    public Player(String name, Piece piece) {
-        this.name = name;
-        this.piece = piece;
-    }
+    MoveStrategy moveStrategy;
 
     public String getName() {
         return name;
@@ -26,4 +24,7 @@ public class Player {
         this.piece = piece;
     }
 
+    public MoveStrategy getMoveStrategy() {
+        return moveStrategy;
+    }
 }

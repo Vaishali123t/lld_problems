@@ -28,5 +28,16 @@ ____
 
 Design patterns used
 
-1. State pattern
-2. Added PlayerFactory to create players.
+1. **State pattern**: For managing game states. 
+2. **Factory method**: Added PlayerFactory to create players.
+3. **Strategy pattern**: to make it extensible to AI player.
+    Instead of doing
+    ```
+   if (player == human) { ...  }
+   else if (player == AI) { ...}
+   ```
+    delete tis behaviour to strategy
+    
+    
+
+    I

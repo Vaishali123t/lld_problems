@@ -22,24 +22,14 @@ public class Game {
             System.out.println("******");
             board.showBoard();
             System.out.println(currentPlayer.getName()+"'s turn");
-            System.out.print("Pick a row and column: ");
-            Scanner scanner= new Scanner(System.in);
-            int row= scanner.nextInt();
-            int col= scanner.nextInt();
-            if (board.checkValid(row,col)) { // valid move
-                board.fillCell(row,col,currentPlayer.getPiece());
-                currentState.next(currentPlayer.getPiece());
-                board.showBoard();
-                // change player -> we could have added states here as well like XTurnState , OTurnState and changed states there
-                if (currentState.isGameOver()) {
-                    break;
-                }
-                else  {
-                    currentPlayer = currentPlayer==players.get(0)?players.get(1):players.get(0);
-                }
+            currentPlayer.getMoveStrategy().makeMove(board, currentPlayer.getPiece());
+            currentState.next(currentPlayer.getPiece());
+            // change player -> we could have added states here as well like XTurnState , OTurnState and changed states there
+            if (currentState.isGameOver()) {
+                break;
             }
-            else {
-                System.out.println("Invalid move. Please see the board and pick appropriate row and col");
+            else  {
+                currentPlayer = currentPlayer==players.get(0)?players.get(1):players.get(0);
             }
         }
     }
