@@ -1,6 +1,5 @@
 package main.java.org.lld.tictactoe.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,12 +10,10 @@ public class Game {
     Player currentPlayer;
     IState currentState;
 
-    public Game() {
+    public Game(List<Player> players) {
         board = new Board();
-        players = new ArrayList<>();
-        Player playerO = new PlayerO("PlayerO");
-        players.add(playerO);
-        players.add(new PlayerX("PlayerX"));
+        this.players = players;
+        Player playerO = players.get(0);
         currentPlayer = playerO;
     }
 

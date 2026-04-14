@@ -29,3 +29,4 @@ ____
 Design patterns used
 
 1. State pattern
+2. Added PlayerFactory to create players.
