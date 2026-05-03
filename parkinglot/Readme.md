@@ -69,5 +69,10 @@ Ans.** Gates are thin controllers; they delegate business logic to the service l
 **6. What if I want to create Display boards? How will display boards update?
 Ans.** Observer pattern.
 
+**7. When to create an interface, when to create an abstract class and when to use an enum of type in the class?
+Ans.** _Interface_: interchangeable behaviours, no shared state (attributes)
+     _Abstract class_: share state and partially implement behavior across subclasses
+     _Enum_: Values are finite and fixed, no complex behaviour differences
+
 
 
